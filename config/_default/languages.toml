@@ -1,0 +1,11 @@
+
+[en]
+  title = "Clarity"
+  LanguageName = "English"
+  weight = 1
+
+[ru]
+  title = "Clarify"
+  LanguageName = "Русский"
+  weight = 1
+
