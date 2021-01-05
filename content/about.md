@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
+description = "A bit about myself and the website"
 date = "2020-12-05"
 aliases = ["about-me", "contact"]
 author = "Alexey Kharlamov"

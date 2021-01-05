@@ -4,7 +4,7 @@ baseurl = "https://www.kharlamov.biz/"  # Include trailing slash
 title = "Thoughts on people and software"
 author = "Alexey Kharlamov"
 copyright = "Copyright © 2020, Alexey Kharlamov; all rights reserved."
-# canonifyurls = true
+canonifyurls = true
 paginate = 10
 theme = "hugo-clarity"
 
@@ -18,7 +18,6 @@ DefaultContentLanguage = "en"
 # config/_default/menus/menu.xx.toml
 
 [taxonomies]
-category = "categories"
 tag = "tags"
 series = "series"
 
@@ -73,7 +72,7 @@ mainSections = ["post"] # see config details here https://gohugo.io/functions/wh
 # center logo on navbar
 centerLogo = false # Set to "true" for centering or "false" for left aligned.
 
-#logo = "logos/logo.png"
+logo = "logos/logo.png"
 
 # Label Non inline images on an article body
 figurePositionShow = false # toggle on or off globally
@@ -105,7 +104,7 @@ languageMenuName = "🌐"
 # numberOfRecentPosts = 8
 
 # Maximum number of featured posts.
-# numberOfFeaturedPosts = 8
+numberOfFeaturedPosts = 0
 
 # Date format. Checkout https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference for details.
 # dateFormat = "2006-01-02" # Default to "Jan 2, 2006".
