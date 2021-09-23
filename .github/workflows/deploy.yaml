@@ -30,7 +30,7 @@ jobs:
           chmod 700 key
           rsync -vzr -e 'ssh -l root -i key -o StrictHostKeyChecking=no' public/ kharlamov.biz:/var/www/kharlamov.biz
         env:
-          SSH_KEY: ${{ secrets.DEPLOYER_SSH_KEY1 }}
+          SSH_KEY: ${{ secrets.DEPLOYER_SSH_KEY }}
 
 
       - name: Clean up keys
