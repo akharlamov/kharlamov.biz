@@ -1,0 +1,37 @@
+name: check-commit
+on:
+  push:
+    branches:
+      - master
+jobs:
+  checks:
+    timeout-minutes: 10
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository from git
+        uses: actions/checkout@v2
+
+      - name: Block parallel runs
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Hugo
+        run: |
+          sudo apt install hugo
+
+      - name: Generate static site
+        run: |
+          hugo
+
+      - name: Deploy static site
+        run: |
+          echo $SSH_KEY > key
+          rsync -vzr -e 'ssh -i key -o StrictHostKeyChecking=no' public/ kharlamov.biz:/var/www/kharlamov.biz
+        env:
+          SSH_KEY: ${{ secrets.DEPLOYER_SSH_KEY }}
+
+
+      - name: Clean up keys
+        run: |
+          rm -rf key
