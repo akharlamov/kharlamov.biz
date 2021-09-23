@@ -27,6 +27,7 @@ jobs:
       - name: Deploy static site
         run: |
           echo $SSH_KEY > key
+          chmod 700 key
           rsync -vzr -e 'ssh -i key -o StrictHostKeyChecking=no' public/ kharlamov.biz:/var/www/kharlamov.biz
         env:
           SSH_KEY: ${{ secrets.DEPLOYER_SSH_KEY }}
