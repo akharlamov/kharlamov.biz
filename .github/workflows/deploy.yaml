@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy static site
         run: |
-          echo "$SSH_KEY" | base64 -d - > key
+          echo "$SSH_KEY" > key
           chmod 700 key
           rsync -vzr -e 'ssh -l root -i key -o StrictHostKeyChecking=no' public/ kharlamov.biz:/var/www/kharlamov.biz
         env:
